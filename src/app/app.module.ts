@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ChartsModule } from 'ng2-charts';
 
 import {appRoutes} from '../routes';
 
@@ -11,6 +13,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { SectionQuestionsComponent } from './sections/section-questions/section-questions.component';
 import { SectionAskQuestionComponent } from './sections/section-ask-question/section-ask-question.component';
 import { SectionContactComponent } from './sections/section-contact/section-contact.component';
+import { PostQuestionComponent } from './post-question/post-question.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +22,14 @@ import { SectionContactComponent } from './sections/section-contact/section-cont
     SidebarComponent,
     SectionQuestionsComponent,
     SectionAskQuestionComponent,
-    SectionContactComponent
+    SectionContactComponent,
+    PostQuestionComponent
   ],
   imports: [
     NgbModule,
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
