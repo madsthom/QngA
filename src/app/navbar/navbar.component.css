@@ -9,14 +9,15 @@
     padding: 3px 5px 3px 8px;
     border-radius: 4px;
 }
-.logo-right{
-    background-color: rgb(101, 101, 146);
+
+.logo-middle{
     padding: 3px 8px 3px 3px;
     margin-left: -5px;
     border-radius: 4px;
 }
 
-.logo-middle{
+.logo-right{
+    background-color: rgb(101, 101, 146);
     padding: 3px 8px 3px 3px;
     margin-left: -5px;
     border-radius: 4px;
