@@ -1,20 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
+import {appRoutes} from '../routes';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { SectionQuestionsComponent } from './sections/section-questions/section-questions.component';
+import { SectionAskQuestionComponent } from './sections/section-ask-question/section-ask-question.component';
+import { SectionContactComponent } from './sections/section-contact/section-contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    SectionQuestionsComponent,
+    SectionAskQuestionComponent,
+    SectionContactComponent
   ],
   imports: [
     NgbModule,
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
