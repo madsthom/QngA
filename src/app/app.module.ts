@@ -14,6 +14,7 @@ import { SectionQuestionsComponent } from './sections/section-questions/section-
 import { SectionAskQuestionComponent } from './sections/section-ask-question/section-ask-question.component';
 import { SectionContactComponent } from './sections/section-contact/section-contact.component';
 import { PostQuestionComponent } from './post-question/post-question.component';
+import { QuestionsListComponent } from './questions-list/questions-list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PostQuestionComponent } from './post-question/post-question.component';
     SectionQuestionsComponent,
     SectionAskQuestionComponent,
     SectionContactComponent,
-    PostQuestionComponent
+    PostQuestionComponent,
+    QuestionsListComponent
   ],
   imports: [
     NgbModule,
