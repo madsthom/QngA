@@ -1,4 +1,4 @@
 <div class="input-group mb-3">
-  <textarea class="form-control" placeholder="Your question here.." rows="3"></textarea>
+  <textarea class="form-control" placeholder="Your question here.." rows="3" #questionInput></textarea>
 </div>
-<button class="btn btn-outline-secondary" type="button">Submit Question</button>
+<button class="btn btn-outline-secondary" type="button" (click)="submitQuestion(questionInput.value)">Submit Question</button>

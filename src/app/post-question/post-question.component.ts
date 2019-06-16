@@ -1,11 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-
-const SAMPLE_BARCHART_DATA: any[] = [
-  {data: [65, 59, 34, 56, 85, 90, 50], label: "Q3 Sales"},
-  {data: [25, 39, 44, 36, 25, 30, 38], label: "Q4 Sales"},
-];
-
-const SAMPLE_BARCHART_LABELS: string[] = ["W1", "W2", "W3", "W4", "W5", "W6", "W7"];
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { QuestionDataService } from '../services/question-data.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-question',
@@ -14,18 +9,19 @@ const SAMPLE_BARCHART_LABELS: string[] = ["W1", "W2", "W3", "W4", "W5", "W6", "W
 })
 export class PostQuestionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _questionDataService: QuestionDataService,
+              private _router: Router) { }
 
-  public barChartData: any[] = SAMPLE_BARCHART_DATA;
-  public barChartLabels: any[] = SAMPLE_BARCHART_LABELS;
-  public barChartType = "bar";
-  public barChartLegend = true;
-  public barChartOptions: any = {
-    scaleShowVerticalLines: false,
-    responsive: true
+  submitQuestion(question: string) {
+    this._questionDataService.postQuestion(question)
+      .then(res => {
+        console.log(res);
+        this._router.navigateByUrl("questions");
+      })
   }
 
   ngOnInit() {
+    
   }
 
 }

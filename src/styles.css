@@ -28,6 +28,7 @@ a:hover {
 
 .section-container {
     padding: 30px;
+    font-size: 80%;
 }
 
 .card-theme {
@@ -50,4 +51,15 @@ a:hover {
 .cards {
     display: flex;
     flex-direction: column;
+}
+
+.btn-sm {
+    font-size: 60%;
+    color: white;
+}
+
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
 }

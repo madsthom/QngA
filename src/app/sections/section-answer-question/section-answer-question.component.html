@@ -1,0 +1,20 @@
+<div class="section-container">
+  <div class="row-fluid cards">
+    <div class="card-deck">
+      <div class="card mb-3 shadow card-theme">
+        <div class="card-header card-header-theme">
+          Answer A Specific question!
+        </div>
+        <div class="card-body" *ngIf="question">
+          <p>{{question.questionText}}</p>
+          <div class="input-group mb-3">
+            <textarea class="form-control" placeholder="Your answer here.." rows="3" #answerInput></textarea>
+          </div>
+          <button class="btn btn-outline-secondary"
+                  type="button"
+                  (click)="submitAnswer(answerInput.value)">Submit Answer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

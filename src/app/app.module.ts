@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -15,6 +16,8 @@ import { SectionAskQuestionComponent } from './sections/section-ask-question/sec
 import { SectionContactComponent } from './sections/section-contact/section-contact.component';
 import { PostQuestionComponent } from './post-question/post-question.component';
 import { QuestionsListComponent } from './questions-list/questions-list.component';
+import { QuestionDataService } from './services/question-data.service';
+import { SectionAnswerQuestionComponent } from './sections/section-answer-question/section-answer-question.component';
 
 @NgModule({
   declarations: [
@@ -25,15 +28,17 @@ import { QuestionsListComponent } from './questions-list/questions-list.componen
     SectionAskQuestionComponent,
     SectionContactComponent,
     PostQuestionComponent,
-    QuestionsListComponent
+    QuestionsListComponent,
+    SectionAnswerQuestionComponent
   ],
   imports: [
     NgbModule,
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    ChartsModule
+    ChartsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [QuestionDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

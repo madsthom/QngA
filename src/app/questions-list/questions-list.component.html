@@ -2,24 +2,35 @@
   Recent Questions Asked
 </div>
 <div class="card-body">
-    <div class="card mb-3 shadow card-theme">
-      <div class="card-header card-header-theme">
-          Some questions
-      </div>
-      <div class="card-body">
-        <ul>
-          <li>Some answer</li>
-          <li>Some other answer</li>
-        </ul>
-      </div>
-      <div class="card-header card-header-theme">
-          Some questions
-      </div>
-      <div class="card-body">
-        <ul>
-          <li>Some answer</li>
-          <li>Some other answer</li>
-        </ul>
+<div class="card-columns">
+    <div *ngIf="isLoaded">
+      <div *ngFor="let q of questions">
+        <div class="card mb-3 shadow card-theme">
+          <div class="card-header card-header-theme">
+            {{ q.questionText }}
+              <div class="action-btn">
+                <button class="btn-xs btn-sm btn-success btn-outline-secondary"
+                    type="button"
+                    (click)="answerQuestion(q.questionId)">Answer me!</button>
+                    &nbsp;
+                <button class="btn-xs btn-sm btn-warning btn-outline-secondary"
+                    type="button"
+                    (click)="deleteQuestion(q.questionId)">Delete me!</button>
+              </div>
+            
+          </div>
+          <div class="card-body">
+            <ul *ngIf="q.answers != undefined">
+              <li *ngFor="let a of q.answers">
+                {{a.answerText}}
+                <button class="btn-xs btn-sm btn-warning btn-outline-secondary"
+                  type="button"
+                  (click)="deleteAnswer(a.answerId)">delete!</button>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 </div>
